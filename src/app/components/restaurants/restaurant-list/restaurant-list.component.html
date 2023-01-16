@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <div class="container" >
+    <a class="navbar-brand" href="#">RestaurantUI</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" color="acent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/restaurants">Restaurants</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="restaurants/add">Add Restaurant</a>
+        </li> -->
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container  my-5">
+  <h1 class="mb-3">Restaurants List</h1>
+  <a [routerLink]="['/restaurants', 'add']" class="btn btn-primary mx-7 float-left"  >Add Restaurant</a>
+  <button (click)="logout()" class="btn btn-secondary float-left">Log Out</button>
+  <div className="table">
+  <table class="table border border-secondary rounded" *ngIf="restaurants && restaurants.length > 0">
+ 
+    <thead class="table-dark">
+      <tr>
+        <th>Id</th>
+        <th>RestoName</th>
+        <th>Location</th>
+        <th>Specialities</th>
+        <th>Additional Features</th>
+        <th>Menu</th>
+        <th class="actions">Actions</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let restaurant of restaurants">
+        <td>{{ restaurant.id }}</td>
+        <td>{{ restaurant.restoName }}</td>
+        <td>{{ restaurant.location }}</td>
+        <td>{{ restaurant.specialities }}</td>
+        <td>{{ restaurant.additiionalFeatures }}</td>
+        <td>{{ restaurant.menu }}</td>
+
+        <td >
+          <a [routerLink]="['/restaurants', 'edit', restaurant.id]" class="btn btn-primary mx-1">View</a>
+           <a [routerLink]="['/restaurants', 'add', restaurant]" class="btn btn-primary"  >Add</a>
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p *ngIf="!restaurants || restaurants.length <= 0">No Restaurants Found</p>
+</div>

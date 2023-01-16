@@ -1,0 +1,38 @@
+<div class="container my-5">
+  <h1 class="mb-3">Add Restaurant</h1>
+  <div class="row">
+      <div class="col-6">
+        <form #form="ngForm" (ngSubmit)="addRestaurant()">
+            <div class="mb-3">
+              <label for="" class="form-label">RestoName</label>
+              <input type="text" class="form-control" id="name" 
+              name="name" [(ngModel)] = "addRestaurantRequest.restoName" />
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Location</label>
+                <input type="text" class="form-control" id="name" 
+                name="name" [(ngModel)] = "addRestaurantRequest.location" />
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Specialities</label>
+                <input type="text" class="form-control" id="name"
+                name="name" [(ngModel)] = "addRestaurantRequest.specialities" />
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Additional Fetaures</label>
+                <input type="text" class="form-control" id="name" 
+                name="name" [(ngModel)] = "addRestaurantRequest.additiionalFeatures" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1">Menu Items</label>
+                <textarea class="form-control" id="name" 
+                name="menu" [(ngModel)] = "addRestaurantRequest.menu" ></textarea>
+              
+              </div>
+        
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+      </div>
+  </div>
+  
+</div>

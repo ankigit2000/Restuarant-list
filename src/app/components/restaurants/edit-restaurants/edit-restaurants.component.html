@@ -1,0 +1,46 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit Restaurant</h1>
+    <div class="row">
+        <div class="col-6">
+          <form #form="ngForm" (ngSubmit)="updateRestaurant()">
+            <div class="mb-3">
+                <label for="id" class="form-label">Id</label>
+                <input type="text" class="form-control" id="name" readonly
+                name="id" [(ngModel)] = "restaurantDetails.id" />
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">RestoName</label>
+                <input type="text" class="form-control" id="name" 
+                name="restoName" [(ngModel)] = "restaurantDetails.restoName" />
+              </div>
+              <div class="mb-3">
+                  <label for="" class="form-label">Location</label>
+                  <input type="text" class="form-control" id="name" 
+                  name="location" [(ngModel)] = "restaurantDetails.location" />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Specialities</label>
+                  <input type="text" class="form-control" id="name"
+                  name="specialities"[(ngModel)] = "restaurantDetails.specialities" />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Additional Fetaures</label>
+                  <input type="text" class="form-control" id="name" 
+                  name="additiionalFeatures" [(ngModel)] = "restaurantDetails.additiionalFeatures" />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1">Menu Items</label>
+                  <textarea class="form-control" id="name" 
+                  name="menu" [(ngModel)] = "restaurantDetails.menu">
+                  </textarea>
+                  
+                </div>
+          
+              <button type="submit" class="btn btn-primary mr-5">Save</button>
+              <button type="button" class="btn btn-danger"(click)="deleteRestaurant(restaurantDetails.id)">Delete</button>
+            </form>
+        </div>
+    </div>
+    
+  </div>
+  

@@ -1,0 +1,16 @@
+.btn-secondary {
+    float: right;
+    position: relative;
+    bottom: 160px;
+    margin-right: -115px;
+}
+.btn-primary {
+    float:right;
+}
+.td{
+text-align: center;
+
+}
+.actions{
+    padding-left: 8vh !important;
+}
